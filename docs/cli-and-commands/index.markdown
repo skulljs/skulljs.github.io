@@ -5,7 +5,7 @@ description: List of the different commands for Skulljs-cli.
 has_children: true
 permalink: /docs/cli-and-commands
 last_modified_date: 2022-11-16 16:50
-nav_order: 3
+nav_order: 5
 ---
 
 # CLI and commands

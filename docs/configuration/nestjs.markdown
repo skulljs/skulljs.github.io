@@ -1,13 +1,17 @@
 ---
 layout: default
 title: NestJs
-description: Configuration of the nestjs project.
+description: Configuration of the nestjs template.
 parent: Configuration
-last_modified_date: 2022-08-29 16:21
+last_modified_date: 2022-11-18 10:50
 ---
 
-# NestJs
+# Configuration of nestjs
 {: .no_toc }
+To make it as easy as possible to use nestjs, we made configurable features. Check below for details
+{: .fs-6 .fw-300 }
+
+The list of those features is available [here](/docs/features/nestjs)
 
 ---
 
@@ -23,9 +27,9 @@ last_modified_date: 2022-08-29 16:21
 
 The global configuration is located at **backend/src/configs/configuration.ts**.
 
-Activate or deactivate those configuration would affect the whole NestJs project.
+Activate or deactivate those configuration would affect the whole NestJs template.
 
-{% highlight js %}
+{% highlight ts %}
 export const configuration = () => ({
 // Api
 apiPrefix: 'api', // general prefix for nestjs routes
@@ -69,7 +73,7 @@ mailerDefaultFrom: '"skulljs" <skulljs@example.com>', // Default from for mails
 
 The routes middlewares configuration is located at **backend/src/app.module.ts**.
 
-{% highlight js %}
+{% highlight ts %}
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(CheckAuthenticatedMiddleware).forRoutes('*');

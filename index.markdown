@@ -18,34 +18,20 @@ Skulljs aims to give a solid structure to create web applications based on Javas
 
 ---
 
-Here is some features built in Skulljs:
+## Features
+
+View the features list [here](/docs/features)
+
+---
 
 ## Skulljs CLI
 
-- The [skulljs-cli](https://www.npmjs.com/package/@skulljs/cli), several commands and utilities
+Here is some commands built in [skulljs-cli](https://www.npmjs.com/package/@skulljs/cli):
+
 - `sk new <project_name>`: create a project with frontend and backend to choose in a list
 - `sk route:create`: generation of backend routes and frontend services from a database table for CRUD
 - `sk build`: create a dist folder ready to deploy for PM2 or Docker
 - more commands availables [here](/docs/cli-and-commands)
-
-## NestJs
-
-- Prisma
-- Optional use of Faker to populate the database with fake data
-- PDF generation from a customizable class named PDFGenerator
-- PDF generation from EJS templates
-- Email generation from EJS templates
-- A built-in logger using Morgan
-- A built-in middleware for check if a user is logged
-- A built-in security middleware using Helmet
-- Cors support
-- Session support using express-session
-- Integration of Compodoc and OpenAPI
-
-## Angular
-
-- An Angular directive to handle pre-loaders
-- Integration of Compodoc
 
 ---
 

@@ -16,6 +16,13 @@ This page aims to give a quick install guide for testing the skulljs project.
 
 ---
 
+## Informations
+
+In this getting started guide we will install a project with the **angular template** and the **nestjs template**.
+Other templates are not currently supported by this guide.
+
+---
+
 ## Prerequisities
 
 - Latest LTS of [Node.js](https://nodejs.org/en/)
@@ -32,6 +39,8 @@ $ npm install --global @skulljs/cli
 {% highlight bash %}
 $ sk new <project_name>
 {% endhighlight %}
+
+**Select angular and nestjs**
 
 3- Configure the database access in **backend/.env**
 {% highlight env %}
