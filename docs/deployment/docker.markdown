@@ -28,7 +28,14 @@ When you are ready to deploy your application to a remote server, you can follow
 - Latest LTS of [Node.js](https://nodejs.org/en/) on the local computer
 - [skulljs-cli](https://www.npmjs.com/package/@skulljs/cli) globally installed on the local computer
 - [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed on the remote server
-- (Optionnal) An SSL Certificate: replace files in sslcert, need to be in pem format
+- (Optional: HTTPS) An SSL Certificate
+
+---
+
+## Optional step - Set up SSL certificate for HTTPS
+
+1. Put your certificate key in **sslcert/key.pem** without changing the filename or extension
+1. Put your certificate file in **sslcert/cert.pem** without changing the filename or extension
 
 ---
 
@@ -41,7 +48,7 @@ $ sk build
 1. Enter the name of the app
 1. Enter the ip or the name of the remote server which you want to deploy your app
 1. Enter the port of the remote server which you want to deploy your app
-1. Select which hypertext transfer protocol do you want to use (https need sslcert)
+1. Select which hypertext transfer protocol do you want to use (select https require the previous step)
 1. Select DOCKER when the CLI ask for manager
 
 ---
