@@ -35,8 +35,8 @@ When you are ready to deploy your application to a remote server, you can follow
 
 ## Optional step - Set up SSL certificate for HTTPS
 
-1. Put your certificate key in **sslcert/key.pem** without changing the filename or extension
-1. Put your certificate file in **sslcert/cert.pem** without changing the filename or extension
+1. Put your certificate key in **sslcert/xxx.key.pem**, you can only change the xxx part
+1. Put your certificate file in **sslcert/xxx.cert.pem**, you can only change the xxx part
 
 ---
 
