@@ -25,10 +25,9 @@ When you are ready to deploy your application to a remote server, you can follow
 ## Step 1 - Install the prerequisities
 
 - Verify that your project work in development
-- Latest LTS of [Node.js](https://nodejs.org/en/) on the remote server and on the local computer
+- Latest LTS of [Node.js](https://nodejs.org/en/) on the local computer
 - [skulljs-cli](https://www.npmjs.com/package/@skulljs/cli) globally installed on the local computer
 - [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed on the remote server
-- MySQL installed on the remote server
 - (Optionnal) An SSL Certificate: replace files in sslcert, need to be in pem format
 
 ---
