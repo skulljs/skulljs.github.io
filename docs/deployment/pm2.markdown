@@ -77,10 +77,8 @@ $ npx prisma db push
 $ npx prisma db seed
 or
 <!-- With migration -->
-$ npx prisma migrate reset
-or
-<!-- Only migrate change -->
 $ npx prisma migrate deploy
+$ npx prisma db seed
 {% endhighlight %}
 
 ## Step 5 - Use PM2
