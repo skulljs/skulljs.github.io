@@ -80,6 +80,7 @@ You can use the following commands to manage your processes
 $ npm run docker:build
 $ npm run docker:up
 $ npm run docker:down
+$ npm run docker:logs
 {% endhighlight %}
 
 ## Step 5 - Initialize the database in the docker container

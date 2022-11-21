@@ -98,6 +98,7 @@ $ npm run pm2:stop
 $ npm run pm2:restart
 $ npm run pm2:reload
 $ npm run pm2:delete
+$ npm run pm2:logs
 {% endhighlight %}
 
 ### Setup startup script
