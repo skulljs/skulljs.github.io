@@ -37,7 +37,7 @@ Here is some commands built in [skulljs-cli](https://www.npmjs.com/package/@skul
 
 ## About the project
 
-Skulljs is &copy; 2021-{{ "now" | date: "%Y" }}
+Skulljs is &copy; 2022-{{ "now" | date: "%Y" }}
 
 ### License
 
