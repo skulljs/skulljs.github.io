@@ -3,7 +3,7 @@ layout: default
 title: NestJs
 description: Configuration of the nestjs template.
 parent: Configuration
-last_modified_date: 2022-11-18 10:50
+last_modified_date: 2022-11-28 15:52
 ---
 
 # Configuration of nestjs
@@ -59,9 +59,6 @@ sessionSaveUninitialized: false, // true = Forces a session that is "uninitializ
 sessionCookieHttpOnly: false, // Specifies the boolean value for the HttpOnly Set-Cookie attribute.
 sessionCookieSecure: 'auto', // Specifies the boolean value for the Secure Set-Cookie attribute.
 
-// Check Authenticated
-checkAuthencicatedKey: 'isAuthenticated', // session key for check auhenticated middleware
-
 // Mailer
 mailerSmtpHost: 'smtp.example.com', // Smtp Host
 mailerSmtpPort: 25, // Smtp Port
@@ -69,14 +66,28 @@ mailerDefaultFrom: '"skulljs" <skulljs@example.com>', // Default from for mails
 });
 {% endhighlight %}
 
-## Routes Middlewares
+## IsAuthorized Guard
 
-The routes middlewares configuration is located at **backend/src/app.module.ts**.
+In other to use our IsAuthorized Guard, you have to put the following lines in your route controller
 
 {% highlight ts %}
-export class AppModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(CheckAuthenticatedMiddleware).forRoutes('*');
-  }
+@ApiTags('cats')
+@Controller('cats')
+@UseGuards(IsAuthorizedGuard)
+export class CatsController {
+  ...
 }
 {% endhighlight %}
+
+Then, you can use the authorize decorator in your controller to specify for each endpoint the authorized roles
+
+{% highlight ts %}
+@Delete(':id')
+@Authorize(Roles.Admin)
+@ApiOkResponse({ type: Cat })
+remove(@Param('id') id: string) {
+  return this.catsService.remove(+id);
+}
+{% endhighlight %}
+
+You can manage the roles and the guard's logic at **backend/src/guards/is-authorized**.

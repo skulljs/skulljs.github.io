@@ -3,7 +3,7 @@ layout: default
 title: NestJs
 description: Features of the nestjs template.
 parent: Features
-last_modified_date: 2022-11-18 11:13
+last_modified_date: 2022-11-28 15:51
 ---
 
 # Features of nestjs
@@ -27,13 +27,13 @@ The configuration of those features is available [here](/docs/configuration/nest
 
 ## Authentication and security
 
-| Features                                            |
-| --------------------------------------------------- |
-| A built-in logger using Morgan                      |
-| A built-in middleware for check if a user is logged |
-| A built-in security middleware using Helmet         |
-| Cors support                                        |
-| Session support using express-session               |
+| Features                                                    |
+| ----------------------------------------------------------- |
+| A built-in logger using Morgan                              |
+| A built-in guard for manage endpoints access based on roles |
+| A built-in security middleware using Helmet                 |
+| Cors support                                                |
+| Session support using express-session                       |
 
 ## Documentation
 
