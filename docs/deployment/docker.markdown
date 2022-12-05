@@ -3,7 +3,7 @@ layout: default
 title: Docker
 description: Deployment of a skulljs project with docker.
 parent: Deployment
-last_modified_date: 2022-11-18 12:09
+last_modified_date: 2022-12-05 17:19
 ---
 
 # Deployment with Docker
@@ -92,6 +92,7 @@ $ npm run docker:logs
 
 ## Step 5 - Initialize the database in the docker container
 
+1. Wait for the docker containers to boot up (this can take up to 5min, execute 'npm run docker:logs' once this delay has passed)
 1. Init the database (depends of the ORM in use, check examples below)
 
 ### Ex: Prisma
