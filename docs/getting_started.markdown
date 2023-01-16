@@ -27,6 +27,7 @@ Other templates are not currently supported by this guide.
 
 - Latest LTS of [Node.js](https://nodejs.org/en/)
 - [MySQL](https://www.mysql.com/fr/) installed
+- [Git](https://git-scm.com/downloads) installed
 
 ---
 
