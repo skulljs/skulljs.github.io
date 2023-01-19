@@ -31,7 +31,7 @@ Other templates are not currently supported by this guide.
 
 ---
 
-1- Install the kestrel-cli
+1- Install the skulljs-cli
 {% highlight bash %}
 $ npm install --global @skulljs/cli
 {% endhighlight %}
