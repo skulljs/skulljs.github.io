@@ -16,7 +16,7 @@ Here is the list of technologies the angular template uses.
 |                                                        | Description                                               |
 | ------------------------------------------------------ | --------------------------------------------------------- |
 | [angular](https://angular.io/)                         | Framework JavaScript for Frontend development             |
-| [compodoc](https://compodoc.app/)                      | Documentation tool for                                    |
+| [compodoc](https://compodoc.app/)                      | Documentation tool                                        |
 | [rxjs](https://rxjs.dev/)                              | Reactive Extensions Library for JavaScript.               |
 | [typescript](https://www.npmjs.com/package/typescript) | TypeScript is a language for application-scale JavaScript |
 | [uuid](https://www.npmjs.com/package/uuid)             | For the creation of RFC4122 UUIDs                         |
