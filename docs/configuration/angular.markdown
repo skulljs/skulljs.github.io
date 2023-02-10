@@ -32,3 +32,11 @@ The configuration of the loader directive is located at **frontend/src/app/modul
 @Input() loaderHeight = '200px';
 @Input() loaderWidth = '200px';
 {% endhighlight %}
+
+## Skulljs style
+
+The configuration of the style is located at **frontend/src/assets/scss/_layout.scss** and **frontend/src/assets/scss/_variables.scss**.
+
+The configuration can be activate / desactivate at **frontend/src/styles.scss**.
+
+We recommend using material on top of this.
