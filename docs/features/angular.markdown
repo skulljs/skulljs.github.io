@@ -17,9 +17,10 @@ The configuration of those features is available [here](/docs/configuration/angu
 
 ## Utilities
 
-| Features                                   |
-| ------------------------------------------ |
-| An Angular directive to handle pre-loaders |
+| Features                                                 |
+| -------------------------------------------------------- |
+| An Angular directive to handle pre-loaders               |
+| Skulljs style we recommend using material on top of this |
 
 ## Documentation
 
