@@ -19,10 +19,12 @@ The configuration of those features is available [here](/docs/configuration/nest
 
 | Features                                                      |
 | ------------------------------------------------------------- |
-| Email generation from EJS templates                           |
+| Email generation from handlebars templates                    |
 | Optional use of Faker to populate the database with fake data |
 | PDF generation from a customizable class named PDFGenerator   |
-| PDF generation from EJS templates                             |
+| PDF generation from handlebars templates                      |
+| Array prototype expansion: asyncForEach                       |
+| Array prototype expansion: shuffle                            |
 | Prisma: ORM                                                   |
 
 ## Authentication and security
