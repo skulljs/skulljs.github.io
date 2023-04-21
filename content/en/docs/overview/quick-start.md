@@ -53,38 +53,38 @@ Select _angular_ and _nestjs_
 
 ### Modify the backend configuration
 
-{{< alert icon="🛑" >}}
+{{< alert icon="⚠️" >}}
 For security purposes you need to modify the configuration located in backend/src/configs/configuration.ts
 {{< /alert >}}
 
 ```typescript
 // backend/src/configs/configuration.ts
 export const configuration = () => ({
-  /** Api **/
+  // Api
 
   // general prefix for nestjs routes
   apiPrefix: "api",
   // nestjs port
   port: 3000,
 
-  /** Access Logger **/
+  // Access Logger
 
   // the max size of the file before it rotates
   accessLoggerFileSize: "10M",
   // the max time before it rotates
   accessLoggerFileInterval: "1d",
 
-  /** Helmet **/
+  // Helmet
 
   // false for sk build
   helmetContentSecurityPolicy: false,
 
-  /** Cors **/
+  // Cors
 
   // allowed origins | Ex: angular
   corsOrigins: ["http://localhost:4200"],
 
-  /** OpenApi **/
+  // OpenApi
 
   // path of the open api docs
   openAPIPath: "api",
@@ -95,7 +95,7 @@ export const configuration = () => ({
   // version of the open api docs
   openAPIVersion: "1.0",
 
-  /** Session **/
+  // Session
 
   // ! you need to change this
   sessionSecret: "changeMeOrInsecure",
@@ -110,7 +110,7 @@ export const configuration = () => ({
   // Specifies the boolean value for the Secure Set-Cookie attribute.
   sessionCookieSecure: "auto",
 
-  /** Mailer **/
+  // Mailer
 
   // Smtp Host
   mailerSmtpHost: "smtp.example.com",
@@ -119,7 +119,7 @@ export const configuration = () => ({
   // Default from for mails
   mailerDefaultFrom: '"skulljs" <skulljs@example.com>',
 
-  /** Crypto **/
+  // Crypto
 
   // ! you need to change this, === 32 characters
   cryptoSecretKey: "changeMeOrInsecure".padEnd(32, "!"),
