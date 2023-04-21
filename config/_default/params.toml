@@ -4,7 +4,7 @@
 title = "Skulljs"
 titleSeparator = "-"
 titleAddition = "Focus on the code not the structure"
-description = "Skulljs aims to give a standardized structure to create web applications based on popular Javascript / Typescript frameworks."
+description = "Skulljs aims to give a standardized file structure to create web applications based on popular Javascript / Typescript frameworks."
 
 ## Documentation
 # docsVersion = "0.3"
