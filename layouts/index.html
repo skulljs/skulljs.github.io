@@ -1,0 +1,83 @@
+{{ define "main" }}
+<section class="section container-fluid mt-n3 pb-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-0">{{ .Title }}</h1>
+    </div>
+    <div class="col-lg-9 col-xl-8 text-center">
+      <p class="lead">{{ .Params.lead | safeHTML }}</p>
+      <a
+        class="btn btn-primary btn-lg px-4 mb-2"
+        href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}overview/introduction/"
+        role="button"
+      >
+        Get Started
+      </a>
+      <p class="meta">
+        Open-source MIT Licensed.
+        <a href="https://github.com/skulljs"> GitHub </a>
+      </p>
+    </div>
+  </div>
+</section>
+{{ end }} {{ define "sidebar-prefooter" }}
+<section class="section section-sm">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-5">
+        <h2 class="h4">Focus on the code not the structure 🧠</h2>
+        <p>
+          Quickly start a project based on popular frameworks without losing
+          time with project initiation.
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <h2 class="h4">Use Popular Frameworks ⭐</h2>
+        <p>
+          Skulljs in build on top of popular frameworks like NestJs or Angular.
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <h2 class="h4">Documentation-ready 📘</h2>
+        <p>
+          Use the integrated tools like
+          <a href="https://compodoc.app/">Compodoc</a> or
+          <a href="https://swagger.io/">Swagger</a> to generate documentation.
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-5">
+        <h2 class="h4">Security 🔒</h2>
+        <p>
+          Build robust and secure web application with the built-in security
+          tools like a Logger, Guards, HTTP headers, CORS support and Session
+          support.
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <h2 class="h4">CLI and Utilities ⚙</h2>
+        <p>
+          Use the built-in utilities and CLI to make common task like Email
+          generation, PDF generation, REST API route generation based on
+          database model.
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <h2 class="h4">Deployment-ready 🚀</h2>
+        <p>
+          Use the Command Line Interface to generate a folder ready to be
+          deployed with <a href="https://www.docker.com/">Docker</a> or
+          <a href="https://pm2.keymetrics.io/">PM2</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }} {{ define "sidebar-footer" }}
+<section class="section section-sm container-fluid">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-9">{{- .Content -}}</div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,111 @@
+# Meta Data for SEO
+
+## Homepage
+title = "Skulljs"
+titleSeparator = "-"
+titleAddition = "Focus on the code not the structure"
+description = "Skulljs aims to give a standardized structure to create web applications based on popular Javascript / Typescript frameworks."
+
+## Documentation
+# docsVersion = "0.3"
+
+## Open Graph
+images = ["skulljs.png"]
+ogLocale = "en_US"
+domainTLD = "skulljs.github.io"
+titleHome = "Skulljs"
+
+## Twitter Cards
+twitterSite = ""
+twitterCreator = ""
+
+## JSON-LD
+schemaType = "Organization"
+schemaName = "Skulljs"
+schemaAuthor = "Florent SIMONET"
+schemaAuthorTwitter = ""
+schemaAuthorLinkedIn = "https://www.linkedin.com/in/florent-simonet-31665113a/"
+schemaAuthorGitHub = "https://github.com/SFlorent"
+schemaLocale = "en-US"
+schemaLogo = "logo-skulljs.png"
+schemaLogoWidth = 300
+schemaLogoHeight = 286
+schemaImage = "skulljs.png"
+schemaImageWidth = 1280
+schemaImageHeight = 640
+schemaTwitter = ""
+schemaLinkedIn = ""
+schemaGitHub = "https://github.com/skulljs"
+schemaSection = "blog"
+
+## Sitelinks Search Box
+siteLinksSearchBox = true
+
+## Chrome Browser
+themeColor = "#fff"
+
+# Images
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+smallLimit = "300"
+
+# Images
+imageResponsive = true
+imageConvertTo = "webp"
+imageImageSizes = ["480","720","1080","1280","1600","2048"]
+singleSize = false
+imageAddClass = "img-fluid lazyload blur-up"
+
+### Image template
+defaultImage = "default-image.png" # put in `./assets/images/`
+fillImage = "1270x740 Center" # normalize image size
+
+# Footer
+footer = "Powered by <a class=\"text-muted\" href=\"https://pages.github.com/\">GitHub Pages</a>, <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
+
+# Feed
+copyRight = "Copyright (c) 2023-2023 Skulljs"
+
+# Alert
+alert = false
+alertDismissable = true
+alertText = "The documentation need to be reviewed."
+
+# Edit Page
+# repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
+repoHost = "GitHub"
+docsRepo = "https://github.com/skulljs/skulljs.github.io"
+docsRepoBranch = "main"
+docsRepoSubPath = ""
+editPage = true
+lastMod = true
+
+[sections]
+  sectionNav = ["docs", "guides"]
+
+[options]
+  lazySizes = true
+  clipBoard = true
+  instantPage = true
+  flexSearch = true
+  searchSectionsShow = []
+  searchSectionsIndex = []
+  darkMode = true
+  bootStrapJs = true
+  breadCrumb = true
+  highLight = true
+  kaTex = false
+  multilingualMode = false
+  docsVersioning = false
+  fullWidth = false
+  navbarSticky = true
+  toTopButton = false
+  scrollSpy = false # experimental; needs Bootstrap >= 5.2.0-beta1
+
+[menu]
+  [menu.section]
+    auto = true
+    collapsibleSidebar = true
