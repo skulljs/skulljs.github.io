@@ -1,7 +1,7 @@
 ---
 title: "PM2 Deployment"
-description: "One page summary of how to deploy a Skulljs project with PM2."
-lead: "One page summary of how to deploy a Skulljs project with PM2."
+description: "Follow these instructions to to deploy a Skulljs project with PM2."
+lead: "Follow these instructions to to deploy a Skulljs project with PM2."
 date: 2023-04-19T15:54:29+02:00
 lastmod: 2023-04-19T15:54:29+02:00
 draft: false
@@ -18,7 +18,7 @@ toc: true
 
 - Working project — check that your project works locally
 - [Node.js](https://nodejs.org/) on local computer and remote server — latest LTS version or newer
-- [Skulljs-cli](https://www.npmjs.com/package/@skulljs/cli) on local computer — the version which you created the project or newer
+- [Skulljs-cli](https://www.npmjs.com/package/@skulljs/cli) on local computer — the version you used to create the project or a newer version
 - [PM2](https://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/) globally installed on the remote server — latest LTS
 - [MySQL](https://www.mysql.com/) on remote server — 8.0 version or newer
 - (Optional: HTTPS) An SSL Certificate
@@ -29,8 +29,8 @@ Set up SSL certificate
 
 ### (Optional) Set up SSL certificate for HTTPS
 
-1. Put your certificate key in **sslcert/xxx.key.pem**, you are only able to change part xxx.
-1. Put your certificate file in **sslcert/xxx.cert.pem**, you are only able to change part xxx.
+1. Put your certificate key in **sslcert/xxx.key.pem**, you are only able to rename the **xxx** part.
+1. Put your certificate file in **sslcert/xxx.cert.pem**, you are only able to rename the **xxx** part.
 
 ### Build the project
 
@@ -39,16 +39,16 @@ sk build
 ```
 
 1. Enter the name of the app
-1. Enter the ip or the name of the remote server which you want to deploy your app
-{{< alert icon="👉" >}}
-We recommend to enter the name rather of the ip to make sure you don't have problem with certificate.
-{{< /alert >}}
-1. Enter the port of the remote server which you want to deploy your app
-1. Select which hypertext transfer protocol do you want to use
-{{< alert icon="👉" >}}
-Select HTTPS requires you to make the optional step. This is recommended.
-{{< /alert >}}
-1. Select PM2 when the CLI ask for manager
+1. Enter the ip address or the name of the remote server where you wish to deploy your application.
+   {{< alert icon="👉" >}}
+   We recommend to enter the name rather than the ip address to make sure you don't encounter problems with certificates.
+   {{< /alert >}}
+1. Enter the port of the remote server where you wish to deploy your application.
+1. Select which hypertext transfer protocol do you would like to use.
+   {{< alert icon="👉" >}}
+   Selecting HTTPS requires you to make the optional step. This is recommended.
+   {{< /alert >}}
+1. Select PM2 when the CLI prompts you to select a manager
 
 ### Setup the folder on the remote server
 
@@ -64,9 +64,9 @@ npm install
 
 1. Change the database configuration in the .env file
 1. Init the database
-{{< alert icon="👉" >}}
-depends of the ORM in use, check examples below.
-{{< /alert >}}
+   {{< alert icon="👉" >}}
+   Actions may vary depending on the ORM being used. Please see below for examples.
+   {{< /alert >}}
 
 #### Ex: Prisma
 
@@ -94,7 +94,7 @@ npm run pm2:start
 
 #### Managing process
 
-You can use the following commands to manage your processes
+You can use the following commands to manage your processes.
 
 ```bash
 npm run pm2:start
