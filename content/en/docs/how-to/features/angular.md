@@ -1,7 +1,7 @@
 ---
 title: "Angular Features"
-description: "To make it as easy as possible to use Angular component of Skulljs, we made configurable features."
-lead: "To make it as easy as possible to use Angular component of Skulljs, we made configurable features."
+description: "We have implemented configurable features to make using the Angular component of Skulljs as easy as possible."
+lead: "We have implemented configurable features to make using the Angular component of Skulljs as easy as possible."
 date: 2023-04-21T10:04:29+02:00
 lastmod: 2023-04-21T10:04:29+02:00
 draft: false
@@ -22,10 +22,10 @@ For more information check the official documentation.
 
 ## Skulljs style
 
-Skulljs's Angular component comes with a built-in starter style. You are free to edit or remove it.
+Skulljs's Angular component comes with a built-in starter style. Feel free to edit or remove it.
 
 {{< alert icon="👉" >}}
-We recommend using material on top of this.
+We recommend using angular material on top of this.
 {{< /alert >}}
 
 ### Edit the style
@@ -35,7 +35,7 @@ We recommend using material on top of this.
 frontend/src/assets/scss/_variables.scss
 
 # layout
-frontend/src/assets/scss/_layout.scss 
+frontend/src/assets/scss/_layout.scss
 ```
 
 ### Disable the style
@@ -44,16 +44,16 @@ Comment the following line.
 
 ```scss
 // frontend/src/style.scss
-@import './assets/scss/layout';
+@import "./assets/scss/layout";
 ```
 
 ## IsAuthorized Guard
 
-In order to facilitate the Angular's routes access management, Skulljs come with a built-in guard named IsAuthorized.
+To simplify access management of Angular routes, Skulljs comes equipped with a built-in guard named `IsAuthorized`.
 
 ### Roles description
 
-You can add or remove any roles in the file detailled below.
+You can add or remove any roles in the file detailed below.
 
 ```typescript
 // frontend/src/app/guards/isAuthorized/roles.ts
@@ -62,13 +62,13 @@ export enum Roles {
   LoggedUser,
   Admin,
   // example
-  MyRole
+  MyRole,
 }
 ```
 
 ### Guard logic
 
-You can edit the guard logic in the file detailled below.
+You can edit the guard logic in the file detailed below.
 
 ```typescript
 // frontend/src/app/guards/isAuthorized/is-authorized.guard.ts
@@ -88,15 +88,15 @@ async function validate(authorize: Roles[]) {
 
 ```typescript
 // any routing module
-import { isAuthorizedGuard } from './guards/IsAuthorized/is-authorized.guard';
-import { Roles } from './guards/IsAuthorized/roles';
+import { isAuthorizedGuard } from "./guards/IsAuthorized/is-authorized.guard";
+import { Roles } from "./guards/IsAuthorized/roles";
 
 const routes: Routes = [
-  { 
-    path: 'admin', 
-    component: AdminComponent, 
-    canActivate: [isAuthorizedGuard], 
-    data: { authorize: [Roles.MyRole] }
-  }
+  {
+    path: "admin",
+    component: AdminComponent,
+    canActivate: [isAuthorizedGuard],
+    data: { authorize: [Roles.MyRole] },
+  },
 ];
 ```

@@ -1,7 +1,7 @@
 ---
 title: "Commands"
-description: "Skulljs comes with CLI and commands for common tasks."
-lead: "Skulljs comes with CLI and commands for common tasks."
+description: "Skulljs comes with a CLI and commands for performing common tasks."
+lead: "Skulljs comes with a CLI and commands for performing common tasks."
 date: 2023-04-19T14:46:29+02:00
 lastmod: 2023-04-19T14:46:29+02:00
 draft: false
@@ -17,7 +17,7 @@ toc: true
 
 ## sk new
 
-Create new project based on the github repositories template
+Create new project based on github repositories templates
 
 ### Usage
 
@@ -34,8 +34,8 @@ sk n <project-name> [options]
 
 ### Options
 
-| Option         | Description                    |
-| :------------- | :----------------------------- |
+| Option         | Description                     |
+| :------------- | :------------------------------ |
 | `--back` `-b`  | generate only the backend part  |
 | `--front` `-f` | generate only the frontend part |
 
@@ -51,7 +51,7 @@ sk new my-awesome-project
 
 ### Feature
 
-Create a new route for the backend repository and a new service for the frontend repository based on user answers
+Create a new route for the backend repository and a new service for the frontend repository based on the user's answers
 
 ### Usage
 

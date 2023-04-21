@@ -15,7 +15,7 @@ toc: true
 
 ## Problems updating npm packages
 
-Delete the `./node_modules` folder, and run again:
+Delete the `./node_modules` folder then run:
 
 ```bash
 npm install
@@ -31,6 +31,6 @@ Delete the temporary directories:
 
 Add your frontend base url to the backend whitelist.
 
-## Rights Problems with Docker
+## Permissions problem
 
-Manually create the folder used in docker volumes and give it the good rights.
+Please manually create the folder used in Docker volumes and ensure that it has appropriate permissions.

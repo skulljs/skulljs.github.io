@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
-description: "Skulljs aims to give a standardized structure to create web applications based on popular Javascript / Typescript frameworks."
-lead: "Skulljs aims to give a standardized structure to create web applications based on popular Javascript / Typescript frameworks."
+description: "Skulljs aims to give a standardized file structure to create web applications based on popular Javascript / Typescript frameworks."
+lead: "Skulljs aims to give a standardized file structure to create web applications based on popular Javascript / Typescript frameworks."
 date: 2023-04-19T14:36:29+02:00
 lastmod: 2023-04-19T14:36:29+02:00
 draft: false
@@ -23,7 +23,7 @@ Commands, How-to Guides and Reference Guides.
 
 ### Commands
 
-Get instructions on how to use the Skulljs CLI for accomplish common task. [Commands →]({{< relref "commands" >}})
+Obtain instructions on how to use Skulljs CLI to accomplish common tasks. [Commands →]({{< relref "commands" >}})
 
 ### How-to Guides
 

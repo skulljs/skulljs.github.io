@@ -1,7 +1,7 @@
 ---
 title: "NestJs Features"
-description: "To make it as easy as possible to use NestJs component of Skulljs, we made configurable features."
-lead: "To make it as easy as possible to use NestJs component of Skulljs, we made configurable features."
+description: "We have implemented configurable features to make using the NestJs component of Skulljs as easy as possible."
+lead: "We have implemented configurable features to make using the NestJs component of Skulljs as easy as possible."
 date: 2023-04-21T10:54:29+02:00
 lastmod: 2023-04-21T10:54:29+02:00
 draft: false
@@ -16,79 +16,107 @@ toc: true
 
 ## NestJs Documentation
 
-For more information check the official documentation.
+For more information check out the official documentation.
 
 [Official NestJs Documentation →](https://docs.nestjs.com/)
 
 ## Global Configuration
 
-The global feature's configuration is located at the file detailled below.
+The configuration for the global features can be found in the file detailed below.
 
 {{< alert icon="👉" >}}
-Activate or deactivate those configurations would affect the whole NestJs component.
+Enabling or disabling these configurations would impact the entire NestJs component.
 {{< /alert >}}
 
 ```typescript
 // backend/src/configs/configuration.ts
 export const configuration = () => ({
   // Api
-  apiPrefix: 'api', // general prefix for nestjs routes
-  port: 3000, // nestjs port
+
+  // general prefix for nestjs routes
+  apiPrefix: "api",
+  // nestjs port
+  port: 3000,
 
   // Access Logger
-  accessLoggerFileSize: '10M', // the max size of the file before it rotates
-  accessLoggerFileInterval: '1d', // the max time before it rotates
+
+  // the max size of the file before it rotates
+  accessLoggerFileSize: "10M",
+  // the max time before it rotates
+  accessLoggerFileInterval: "1d",
 
   // Helmet
-  helmetContentSecurityPolicy: false, // false for sk build
+
+  // false for sk build
+  helmetContentSecurityPolicy: false,
 
   // Cors
-  corsOrigins: ['http://localhost:4200'], // allowed origins | Ex: angular
 
-  // OpenAPI
-  openAPIPath: 'api', // path of the open api docs
-  openAPITitle: 'skulljs nestjs example', // title of the open api docs
-  openAPIDescription: 'nestjs component for skulljs', // description of the open api docs
-  openAPIVersion: '1.0', // version of the open api docs
+  // allowed origins | Ex: angular
+  corsOrigins: ["http://localhost:4200"],
+
+  // OpenApi
+
+  // path of the open api docs
+  openAPIPath: "api",
+  // title of the open api docs
+  openAPITitle: "skulljs nestjs example",
+  // description of the open api docs
+  openAPIDescription: "nestjs component for skulljs",
+  // version of the open api docs
+  openAPIVersion: "1.0",
 
   // Session
-  sessionSecret: 'changeMeOrInsecure', // ! you need to change this
-  sessionCookieMaxAge: 86400000, // value in ms | 1 day
-  sessionResave: false, // true = Forces the session to be saved back to the session store, even if the session was never modified during the request.
-  sessionSaveUninitialized: false, // true = Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized when it is new but not modified.
-  sessionCookieHttpOnly: false, // Specifies the boolean value for the HttpOnly Set-Cookie attribute.
-  sessionCookieSecure: 'auto', // Specifies the boolean value for the Secure Set-Cookie attribute.
+
+  // ! you need to change this
+  sessionSecret: "changeMeOrInsecure",
+  // value in ms | 1 day
+  sessionCookieMaxAge: 86400000,
+  // true = Forces the session to be saved back to the session store, even if the session was never modified during the request.
+  sessionResave: false,
+  // true = Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized when it is new but not modified.
+  sessionSaveUninitialized: false,
+  // Specifies the boolean value for the HttpOnly Set-Cookie attribute.
+  sessionCookieHttpOnly: false,
+  // Specifies the boolean value for the Secure Set-Cookie attribute.
+  sessionCookieSecure: "auto",
 
   // Mailer
-  mailerSmtpHost: 'smtp.example.com', // Smtp Host
-  mailerSmtpPort: 25, // Smtp Port
-  mailerDefaultFrom: '"skulljs" <skulljs@example.com>', // Default from for mails
+
+  // Smtp Host
+  mailerSmtpHost: "smtp.example.com",
+  // Smtp Port
+  mailerSmtpPort: 25,
+  // Default from for mails
+  mailerDefaultFrom: '"skulljs" <skulljs@example.com>',
 
   // Crypto
-  cryptoSecretKey: 'changeMeOrInsecure'.padEnd(32, '!'), // ! you need to change this, === 32 characters
+
+  // ! you need to change this, === 32 characters
+  cryptoSecretKey: "changeMeOrInsecure".padEnd(32, "!"),
 });
 ```
 
 ## ORM: Prisma
 
-We choose Prisma as the ORM of the NestJs component of Skulljs.
+We have selected Prisma as the ORM for the NestJs component of Skulljs.
 
 {{< details "Why Prisma?" >}}
 
-1. __Easy to Use__: Prisma is designed to be easy to use. Its declarative syntax makes it easy to read and understand the code, even for developers who are not familiar with the underlying database technology.
-1. __Performance__: Prisma is optimized for performance, with features like query batching and automatic query optimization that can significantly reduce the number of database requests and improve response times. Prisma also uses modern database connectors like PostgreSQL and MySQL to ensure that data is retrieved and processed as quickly as possible.
-1. __Flexibility__: Prisma is highly flexible and can be used with a wide range of databases and technologies. It supports multiple databases, including MySQL, PostgreSQL, and SQLite.
-1. __Strong Type Safety__: Prisma provides strong type safety by generating TypeScript types for your database schema. This helps to catch errors early and ensures that your code is more robust and reliable.
-1. __Open-Source__: Prisma is an open-source project that is actively maintained by a community of developers. This means that it is free to use and can be customized and extended to meet your specific needs.
-{{< /details >}}
+1. **Easy to Use**: Prisma is designed to be easy to use. Its declarative syntax makes it easy to read and understand the code, even for developers who are not familiar with the underlying database technology.
+1. **Performance**: Prisma is optimized for performance, with features like query batching and automatic query optimization that can significantly reduce the number of database requests and improve response times. Prisma also uses modern database connectors like PostgreSQL and MySQL to ensure that data is retrieved and processed as quickly as possible.
+1. **Flexibility**: Prisma is highly flexible and can be used with a wide range of databases and technologies. It supports multiple databases, including MySQL, PostgreSQL, and SQLite.
+1. **Strong Type Safety**: Prisma provides strong type safety by generating TypeScript types for your database schema. This helps to catch errors early and ensures that your code is more robust and reliable.
+1. **Open-Source**: Prisma is an open-source project that is actively maintained by a community of developers. This means that it is free to use and can be customized and extended to meet your specific needs.
+   {{< /details >}}
 
-For more information check the official documentation.
+For more information check out the official documentation.
 
 [Official Prisma Documentation →](https://www.prisma.io/docs)
 
 ### Schema
 
-The database schema is located at the file detailled below.
+The database schema can be found in the file detailed below.
 
 {{< alert icon="👉" >}}
 The database config is located in _backend/.env_
@@ -116,7 +144,7 @@ model Cats {
 
 ### Seeder
 
-The seeder is located at the file detailled below.
+The seeder can be found in the file detailed below.
 
 {{< alert icon="👉" >}}
 You can use [faker](https://fakerjs.dev/) to generate fake data.
@@ -124,8 +152,8 @@ You can use [faker](https://fakerjs.dev/) to generate fake data.
 
 ```typescript
 // backend/prisma/seed.ts
-import { faker } from '@faker-js/faker';
-import { PrismaClient, Cats } from '@prisma/client';
+import { faker } from "@faker-js/faker";
+import { PrismaClient, Cats } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
@@ -147,11 +175,11 @@ main().catch(async (err) => {
 
 ### Usage
 
-We made a service for easier NestJs integration. Here is how to use it.
+We have created a service to facilitate NestJs integration. Here are the instructions on how to use it.
 
 ```typescript
 // any route module
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from "src/prisma.service";
 
 @Module({
   controllers: [CatsController],
@@ -162,7 +190,7 @@ export class CatsModule {}
 
 ```typescript
 // any route service
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from "src/prisma.service";
 
 @Injectable()
 export class CatsService {
@@ -176,13 +204,13 @@ export class CatsService {
 
 ## Session
 
-Skulljs's NestJs component comes with built-in session manager.
+Skulljs's NestJs component comes with a built-in session manager.
 
 ### Session settings
 
-The session settings are located at the file detailled below.
+The session's settings can be found in the file detailed below.
 
-{{< alert icon="🛑" >}}
+{{< alert icon="⚠️" >}}
 You need to change the session secret.
 {{< /alert >}}
 
@@ -190,24 +218,31 @@ You need to change the session secret.
 // backend/src/configs/configuration.ts
 export const configuration = () => ({
   // Session
-  sessionSecret: 'changeMeOrInsecure', // ! you need to change this
-  sessionCookieMaxAge: 86400000, // value in ms | 1 day
-  sessionResave: false, // true = Forces the session to be saved back to the session store, even if the session was never modified during the request.
-  sessionSaveUninitialized: false, // true = Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized when it is new but not modified.
-  sessionCookieHttpOnly: false, // Specifies the boolean value for the HttpOnly Set-Cookie attribute.
-  sessionCookieSecure: 'auto', // Specifies the boolean value for the Secure Set-Cookie attribute.
+
+  // ! you need to change this
+  sessionSecret: "changeMeOrInsecure",
+  // value in ms | 1 day
+  sessionCookieMaxAge: 86400000,
+  // true = Forces the session to be saved back to the session store, even if the session was never modified during the request.
+  sessionResave: false,
+  // true = Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized when it is new but not modified.
+  sessionSaveUninitialized: false,
+  // Specifies the boolean value for the HttpOnly Set-Cookie attribute.
+  sessionCookieHttpOnly: false,
+  // Specifies the boolean value for the Secure Set-Cookie attribute.
+  sessionCookieSecure: "auto",
 });
 ```
 
 ### Session type
 
-The description of the session type is located at the file detailled below.
+The description of the session type can be found in the file detailed below.
 
 ```typescript
-// backend/src/types/session.d.ts 
-import 'express-session';
+// backend/src/types/session.d.ts
+import "express-session";
 
-declare module 'express-session' {
+declare module "express-session" {
   interface Session {
     user?: {
       isLogged: boolean;
@@ -237,25 +272,25 @@ export class CatsController {
 
 ## IsAuthorized Guard
 
-In order to facilitate the NestJs's routes access management, Skulljs come with a built-in guard named IsAuthorized.
+To simplify access management of NestJs routes, Skulljs comes equipped with a built-in guard named `IsAuthorized`.
 
 ### Roles description
 
-You can add or remove any roles in the file detailled below.
+You can add or remove any roles in the file detailed below.
 
 ```typescript
-// backend/src/guards/is-authorized/roles.ts 
+// backend/src/guards/is-authorized/roles.ts
 export enum Roles {
   LoggedUser,
   Admin,
-  // Example 
-  MyRole
+  // Example
+  MyRole,
 }
 ```
 
 ### Guard logic
 
-You can edit the guard logic in the file detailled below.
+You can edit the guard logic in the file detailed below.
 
 ```typescript
 // backend/src/guards/is-authorized/is-authorized.guard.ts
@@ -289,22 +324,25 @@ export class CatsController {
 }
 ```
 
-
 ## Mailer
 
-Skulljs's NestJs component comes with build-in mailer.
+Skulljs's NestJs component comes with a build-in mailer.
 
 ### Mailer settings
 
-The mailer settings are located at the file detailled below.
+The mailer settings can be found in the file detailed below.
 
 ```typescript
 // backend/src/configs/configuration.ts
 export const configuration = () => ({
   // Mailer
-  mailerSmtpHost: 'smtp.example.com', // Smtp Host
-  mailerSmtpPort: 25, // Smtp Port
-  mailerDefaultFrom: '"skulljs" <skulljs@example.com>', // Default from for mails
+
+  // Smtp Host
+  mailerSmtpHost: "smtp.example.com",
+  // Smtp Port
+  mailerSmtpPort: 25,
+  // Default from for mails
+  mailerDefaultFrom: '"skulljs" <skulljs@example.com>',
 });
 ```
 
@@ -326,7 +364,7 @@ export class CatsService {
         subject: '[skulljs] The cats have been created ✔', // Subject line
         template: 'cats',
         context: {
-          // Data to be sent to template engine.
+          // Data to be sent to the template engine.
           name: 'john doe',
         },
       })
@@ -349,7 +387,7 @@ Skulljs's Nestjs component comes with built-in utils.
 Asynchronous forEach
 
 {{< alert icon="👉" >}}
-No need to import. This util is already imported to all the Nestjs component
+No need to import. This util is globally imported in the Nestjs component
 {{< /alert >}}
 
 ```typescript
@@ -366,7 +404,7 @@ await cats.asyncForEach(async (cat) => {
 Function to shuffle an array
 
 {{< alert icon="👉" >}}
-No need to import. This util is already imported to all the Nestjs component
+No need to import. This util is globally imported in the Nestjs component
 {{< /alert >}}
 
 ```typescript
@@ -433,8 +471,8 @@ export class CatsService {
 
 Functions for encrypt, decrypt and hash
 
-{{< alert icon="🛑" >}}
-You need to change the configuration located in backend/src/configs/configuration.ts
+{{< alert icon="⚠️" >}}
+You need to change the configuration found in backend/src/configs/configuration.ts
 {{< /alert >}}
 
 ```typescript
@@ -454,20 +492,25 @@ export class CatsService {
 
 ## Open API
 
-For the API documentation Skulljs use [Open API](https://www.openapis.org/). The default URL for Open API documentation is  [http://localhost:3000/api](http://localhost:3000/api).
+For the API documentation Skulljs uses [Open API](https://www.openapis.org/). The default URL for Open API documentation is [http://localhost:3000/api](http://localhost:3000/api).
 
 ### Open API settings
 
-The Open API settings are located at the file detailled below.
+The Open API settings can be found in the file detailed below.
 
 ```typescript
 // backend/src/configs/configuration.ts
 export const configuration = () => ({
   // OpenAPI
-  openAPIPath: 'api', // path of the open api docs
-  openAPITitle: 'skulljs nestjs example', // title of the open api docs
-  openAPIDescription: 'nestjs component for skulljs', // description of the open api docs
-  openAPIVersion: '1.0', // version of the open api docs
+
+  // path of the open api docs
+  openAPIPath: "api",
+  // title of the open api docs
+  openAPITitle: "skulljs nestjs example",
+  // description of the open api docs
+  openAPIDescription: "nestjs component for skulljs",
+  // version of the open api docs
+  openAPIVersion: "1.0",
 });
 ```
 

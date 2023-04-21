@@ -11,7 +11,7 @@ menu:
 weight: 340
 ---
 
-Here are the different changelog of the Skulljs components.
+Here are the various changelogs for the Skulljs components.
 
 ---
 

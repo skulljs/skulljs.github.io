@@ -1,7 +1,7 @@
 ---
 title: "Quick Start"
-description: "One page summary of how to start a new Skulljs project."
-lead: "One page summary of how to start a new Skulljs project."
+description: "Follow these instructions to create a new Skulljs project."
+lead: "Follow these instructions to create a new Skulljs project."
 date: 2023-04-19T13:57:29+02:00
 lastmod: 2023-04-19T13:57:29+02:00
 draft: false
@@ -26,14 +26,14 @@ Skulljs uses git [repositories](https://github.com/skulljs) to generate the proj
 ## Start a new Skulljs project
 
 {{< alert icon="👉" >}}
-In this example we will use the _angular_ and the _nestjs_ components of Skulljs
+In this example we will use the _angular_ and _nestjs_ components of Skulljs
 {{< /alert >}}
 
-Install the CLI, create a new project, change the backend configuration, configure the database access, initialize the database, and start the app.
+Install the CLI, create a new project, modify the backend configuration, configure database access, initialize the database, and start the app.
 
 ### Install the CLI
 
-To make it as easy as possible to use Skulljs, we made a CLI named skulljs-cli.
+We have created a CLI named skulljs-cli to simplify the usage of Skulljs as much as possible.
 
 ```bash
 npm install --global @skulljs/cli
@@ -48,57 +48,85 @@ sk new <project_name>
 When prompted:
 
 {{< alert icon="👉" >}}
-Select _angular_  and _nestjs_
+Select _angular_ and _nestjs_
 {{< /alert >}}
 
-### Change the backend configuration
+### Modify the backend configuration
 
-{{< alert icon="🛑" >}}
-For security purpose you need to change the configuration located in backend/src/configs/configuration.ts
+{{< alert icon="⚠️" >}}
+For security purposes you need to modify the configuration located in backend/src/configs/configuration.ts
 {{< /alert >}}
 
 ```typescript
 // backend/src/configs/configuration.ts
 export const configuration = () => ({
   // Api
-  apiPrefix: 'api', // general prefix for nestjs routes
-  port: 3000, // nestjs port
+
+  // general prefix for nestjs routes
+  apiPrefix: "api",
+  // nestjs port
+  port: 3000,
 
   // Access Logger
-  accessLoggerFileSize: '10M', // the max size of the file before it rotates
-  accessLoggerFileInterval: '1d', // the max time before it rotates
+
+  // the max size of the file before it rotates
+  accessLoggerFileSize: "10M",
+  // the max time before it rotates
+  accessLoggerFileInterval: "1d",
 
   // Helmet
-  helmetContentSecurityPolicy: false, // false for sk build
+
+  // false for sk build
+  helmetContentSecurityPolicy: false,
 
   // Cors
-  corsOrigins: ['http://localhost:4200'], // allowed origins | Ex: angular
 
-  // OpenAPI
-  openAPIPath: 'api', // path of the open api docs
-  openAPITitle: 'skulljs nestjs example', // title of the open api docs
-  openAPIDescription: 'nestjs component for skulljs', // description of the open api docs
-  openAPIVersion: '1.0', // version of the open api docs
+  // allowed origins | Ex: angular
+  corsOrigins: ["http://localhost:4200"],
+
+  // OpenApi
+
+  // path of the open api docs
+  openAPIPath: "api",
+  // title of the open api docs
+  openAPITitle: "skulljs nestjs example",
+  // description of the open api docs
+  openAPIDescription: "nestjs component for skulljs",
+  // version of the open api docs
+  openAPIVersion: "1.0",
 
   // Session
-  sessionSecret: 'changeMeOrInsecure', // ! you need to change this
-  sessionCookieMaxAge: 86400000, // value in ms | 1 day
-  sessionResave: false, // true = Forces the session to be saved back to the session store, even if the session was never modified during the request.
-  sessionSaveUninitialized: false, // true = Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized when it is new but not modified.
-  sessionCookieHttpOnly: false, // Specifies the boolean value for the HttpOnly Set-Cookie attribute.
-  sessionCookieSecure: 'auto', // Specifies the boolean value for the Secure Set-Cookie attribute.
+
+  // ! you need to change this
+  sessionSecret: "changeMeOrInsecure",
+  // value in ms | 1 day
+  sessionCookieMaxAge: 86400000,
+  // true = Forces the session to be saved back to the session store, even if the session was never modified during the request.
+  sessionResave: false,
+  // true = Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized when it is new but not modified.
+  sessionSaveUninitialized: false,
+  // Specifies the boolean value for the HttpOnly Set-Cookie attribute.
+  sessionCookieHttpOnly: false,
+  // Specifies the boolean value for the Secure Set-Cookie attribute.
+  sessionCookieSecure: "auto",
 
   // Mailer
-  mailerSmtpHost: 'smtp.example.com', // Smtp Host
-  mailerSmtpPort: 25, // Smtp Port
-  mailerDefaultFrom: '"skulljs" <skulljs@example.com>', // Default from for mails
+
+  // Smtp Host
+  mailerSmtpHost: "smtp.example.com",
+  // Smtp Port
+  mailerSmtpPort: 25,
+  // Default from for mails
+  mailerDefaultFrom: '"skulljs" <skulljs@example.com>',
 
   // Crypto
-  cryptoSecretKey: 'changeMeOrInsecure'.padEnd(32, '!'), // ! you need to change this, === 32 characters
+
+  // ! you need to change this, === 32 characters
+  cryptoSecretKey: "changeMeOrInsecure".padEnd(32, "!"),
 });
 ```
 
-### Configure the database access
+### Configure database access
 
 ```bash
 # ./backend/.env
@@ -108,7 +136,7 @@ DATABASE_URL="mysql://username:password@127.0.0.1:3306/skulljs"
 ### Initialize the database
 
 {{< alert icon="👉" >}}
-Require to be in backend folder
+Requires to be in backend folder
 {{< /alert >}}
 
 ```bash
@@ -148,4 +176,4 @@ Skulljs comes with commands for common tasks. [Commands →]({{< relref "command
 
 ## Features
 
-Skulljs comes with many features.  [Features →]({{< relref "features" >}})
+Skulljs comes with many features. [Features →]({{< relref "features" >}})
