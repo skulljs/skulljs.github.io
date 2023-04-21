@@ -23,7 +23,7 @@ Commands, How-to Guides and Reference Guides.
 
 ### Commands
 
-Get instructions on how to use the Skulljs CLI for accomplish common task. [Commands →]({{< relref "commands" >}})
+Obtain instructions on how to use Skulljs CLI to accomplish common tasks. [Commands →]({{< relref "commands" >}})
 
 ### How-to Guides
 
