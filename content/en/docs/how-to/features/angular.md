@@ -51,6 +51,13 @@ Comment the following line.
 
 To simplify access management of Angular routes, Skulljs comes equipped with a built-in guard named `IsAuthorized`.
 
+The guard comes with two modes:
+
+- **Minimun Role Mode**: check if the user have the listed role or a superior one
+- **List Role Mode**: check if the user have one of the listed roles
+
+You can switch the mode with the *minimunRoleMode* boolean.
+
 ### Roles description
 
 You can add or remove any roles in the file detailed below.
@@ -58,29 +65,11 @@ You can add or remove any roles in the file detailed below.
 ```typescript
 // frontend/src/app/guards/isAuthorized/roles.ts
 export enum Roles {
-  NonLoggedUser,
-  LoggedUser,
-  Admin,
+  NonLoggedUser = 5,
+  LoggedUser = 10,
+  Admin = 80,
   // example
-  MyRole,
-}
-```
-
-### Guard logic
-
-You can edit the guard logic in the file detailed below.
-
-```typescript
-// frontend/src/app/guards/isAuthorized/is-authorized.guard.ts
-async function validate(authorize: Roles[]) {
-  ...
-
-  if (authorize.includes(Roles.MyRole)) {
-    isAuthorized = <condition>;
-    isLogged = true;
-  }
-
-  return isAuthorized;
+  MyRole = 20,
 }
 ```
 
@@ -93,10 +82,15 @@ import { Roles } from "./guards/IsAuthorized/roles";
 
 const routes: Routes = [
   {
-    path: "admin",
+    path: 'admin',
     component: AdminComponent,
     canActivate: [isAuthorizedGuard],
-    data: { authorize: [Roles.MyRole] },
+    data: {
+      authorize: [Roles.Admin],
+      minimunRoleMode: true,
+      // Redirection url if the user isn't allowed to access the route
+      fallbackRoute: '/auth',
+    },
   },
 ];
 ```

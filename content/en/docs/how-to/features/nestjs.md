@@ -33,6 +33,7 @@ Enabling or disabling these configurations would impact the entire NestJs compon
 export const configuration = () => ({
   // Api
 
+  production: false,
   // general prefix for nestjs routes
   apiPrefix: "api",
   // nestjs port
@@ -89,11 +90,15 @@ export const configuration = () => ({
   mailerSmtpPort: 25,
   // Default from for mails
   mailerDefaultFrom: '"skulljs" <skulljs@example.com>',
+  // Email address for mail diversion in dev env
+  mailerDevEnvRedirectEmail: 'redirect@example.com', 
 
   // Crypto
 
   // ! you need to change this, === 32 characters
   cryptoSecretKey: "changeMeOrInsecure".padEnd(32, "!"),
+  // ! you need to change this
+  cryptoHashSaltString: 'changeMeOrInsecure', 
 });
 ```
 
@@ -152,14 +157,14 @@ You can use [faker](https://fakerjs.dev/) to generate fake data.
 
 ```typescript
 // backend/prisma/seed.ts
-import { faker } from "@faker-js/faker";
-import { PrismaClient, Cats } from "@prisma/client";
+import { faker } from '@faker-js/faker';
+import { PrismaClient, Cats } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
   const data: Cats[] = [];
   for (let i = 1; i <= 50; i++) {
-    data.push({ id: i, name: faker.animal.cat(), color: faker.color.human(), weight: faker.random.numeric(), eyes_color: faker.color.human() });
+    data.push({ id: i, name: faker.animal.cat(), color: faker.color.human(), weight: faker.number.int().toString(), eyes_color: faker.color.human() });
   }
 
   const cats = await prisma.cats.createMany({ data, skipDuplicates: true });
@@ -242,11 +247,12 @@ The description of the session type can be found in the file detailed below.
 // backend/src/types/session.d.ts
 import "express-session";
 
-declare module "express-session" {
+declare module 'express-session' {
   interface Session {
     user?: {
       isLogged: boolean;
-      isAdmin?: boolean;
+      role?: Roles;
+
       // Declare here your session data
     };
   }
@@ -274,6 +280,13 @@ export class CatsController {
 
 To simplify access management of NestJs routes, Skulljs comes equipped with a built-in guard named `IsAuthorized`.
 
+The guard comes with two modes:
+
+- **Minimun Role Mode**: check if the user have the listed role or a superior one
+- **List Role Mode**: check if the user have one of the listed roles
+
+You can switch the mode with the _minimunRoleMode_ boolean.
+
 ### Roles description
 
 You can add or remove any roles in the file detailed below.
@@ -281,25 +294,10 @@ You can add or remove any roles in the file detailed below.
 ```typescript
 // backend/src/guards/is-authorized/roles.ts
 export enum Roles {
-  LoggedUser,
-  Admin,
+  LoggedUser = 10,
+  Admin = 80,
   // Example
-  MyRole,
-}
-```
-
-### Guard logic
-
-You can edit the guard logic in the file detailed below.
-
-```typescript
-// backend/src/guards/is-authorized/is-authorized.guard.ts
-validateRequest(session: SessionExpress, authorize: Roles[]) {
-  ...
-  if (session.user && authorize.includes(Roles.MyRole)) {
-    isAuthorized = <condition>;
-  }
-  return isAuthorized;
+  MyRole = 20,
 }
 ```
 
@@ -307,17 +305,14 @@ validateRequest(session: SessionExpress, authorize: Roles[]) {
 
 ```typescript
 // any route controller
-import { ..., UseGuards } from '@nestjs/common';
-import { IsAuthorizedGuard } from 'src/guards/is-authorized/is-authorized.guard';
 import { Authorize } from 'src/decorators/authorize.decorator';
 import { Roles } from 'src/guards/is-authorized/roles';
 
 @Controller('cats')
-@UseGuards(IsAuthorizedGuard)
 export class CatsController {
   ...
   @Get('admin')
-  @Authorize(Roles.MyRole)
+  @Authorize([Roles.MyRole], {minimunRoleMode: true})
   admin() {
     return this.catsService.admin();
   }
@@ -327,6 +322,8 @@ export class CatsController {
 ## Mailer
 
 Skulljs's NestJs component comes with a build-in mailer.
+
+The mailer redirect all mail to the mailerDevEnvRedirectEmail defined in config while the app is in dev env.
 
 ### Mailer settings
 
@@ -343,6 +340,8 @@ export const configuration = () => ({
   mailerSmtpPort: 25,
   // Default from for mails
   mailerDefaultFrom: '"skulljs" <skulljs@example.com>',
+  // Email address for mail diversion in dev env
+  mailerDevEnvRedirectEmail: 'redirect@example.com', 
 });
 ```
 
@@ -351,29 +350,22 @@ export const configuration = () => ({
 ```typescript
 // any route service
 import { MailerService } from '@nestjs-modules/mailer';
+import * as Utils from '../../utils/utils';
 
 @Injectable()
 export class CatsService {
   constructor(private readonly mailerService: MailerService, ...) {}
   ...
   sendMail() {
-    this.mailerService
-      .sendMail({
-        to: 'user.name@example.com', // list of receivers
-        from: 'noreply@skulljs.com', // sender address
-        subject: '[skulljs] The cats have been created ✔', // Subject line
-        template: 'cats',
-        context: {
-          // Data to be sent to the template engine.
-          name: 'john doe',
-        },
-      })
-      .then((success) => {
-        console.log(success);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    Utils.sendMail(this.mailerService, {
+      to: 'user.name@example.com', // list of receivers
+      subject: '[skulljs] The cats have been created ✔', // Subject line
+      template: 'cats',
+      context: {
+        // Data to be sent to template engine.
+        name: 'john doe',
+      },
+    });
   }
 }
 ```
