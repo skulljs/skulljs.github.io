@@ -251,7 +251,7 @@ declare module 'express-session' {
   interface Session {
     user?: {
       isLogged: boolean;
-      role?: Roles;
+      role: Roles;
 
       // Declare here your session data
     };
@@ -294,6 +294,7 @@ You can add or remove any roles in the file detailed below.
 ```typescript
 // backend/src/guards/is-authorized/roles.ts
 export enum Roles {
+  NonLoggedUser = 0,
   LoggedUser = 10,
   Admin = 80,
   // Example
