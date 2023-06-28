@@ -103,8 +103,8 @@ The arrow color is automatically computed based on the background color.
 <sk-scroll-to-top-btn 
   normalBgColor="#357a9b" 
   hoverBgColor="#004e6d"
-  [minDisplayWidth]=500
-  [maxDisplayWidth]=2200
+  [minDisplayWidth]="500"
+  [maxDisplayWidth]="2200"
 >
 </sk-scroll-to-top-btn>
 ```
