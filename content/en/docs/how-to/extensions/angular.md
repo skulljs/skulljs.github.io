@@ -3,7 +3,7 @@ title: "Angular Extensions"
 description: "Use our Angular librairies to extends the Angular component features."
 lead: "Use our Angular librairies to extends the Angular component features."
 date: 2023-04-21T15:22:29+02:00
-lastmod: 2023-04-21T15:22:29+02:00
+lastmod: 2024-03-27T10:22:29+02:00
 draft: false
 images: []
 menu:
@@ -23,6 +23,8 @@ Loader for promises.
 {{< alert icon="👉" >}}
 In frontend
 {{< /alert >}}
+
+Choose the version matching your angular project.
 
 ```bash
 npm i @skulljs/angular-loader
@@ -71,6 +73,8 @@ Smooth scroll to top button.
 {{< alert icon="👉" >}}
 In frontend
 {{< /alert >}}
+
+Choose the version matching your angular project.
 
 ```bash
 npm i @skulljs/angular-scroll-to-top-btn
