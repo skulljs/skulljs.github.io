@@ -65,7 +65,7 @@ You can add or remove any roles in the file detailed below.
 ```typescript
 // frontend/src/app/guards/isAuthorized/roles.ts
 export enum Roles {
-  NonLoggedUser = 5,
+  NonLoggedUser = 0,
   LoggedUser = 10,
   Admin = 80,
   // example
