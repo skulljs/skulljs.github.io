@@ -32,19 +32,20 @@ npm i @skulljs/angular-loader
 
 ### Usage
 
-Add it to the import list of your module.
+Add it to the import list of your component.
 
 ```typescript
-// any module
+// any component
 import { SkLoaderModule } from '@skulljs/angular-loader';
 
-@NgModule({
-  declarations: [AppComponent],
+@Component({
+  selector: 'app-root',
+  standalone: true,
   imports: [..., SkLoaderModule],
-  providers: [],
-  bootstrap: [AppComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
-export class AppModule {}
+export class AppComponent {}
 ```
 
 Use it !
@@ -82,19 +83,20 @@ npm i @skulljs/angular-scroll-to-top-btn
 
 ### Usage
 
-Add it to the import list of your module.
+Add it to the import list of your component.
 
 ```typescript
-// any module
+// any component
 import { SkScrollToTopBtnModule } from '@skulljs/angular-scroll-to-top-btn';
 
-@NgModule({
-  declarations: [AppComponent],
+@Component({
+  selector: 'app-root',
+  standalone: true,
   imports: [..., SkScrollToTopBtnModule],
-  providers: [],
-  bootstrap: [AppComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
-export class AppModule {}
+export class AppComponent {}
 ```
 
 Use it !
