@@ -47,17 +47,17 @@ sk new my-awesome-project
 
 ---
 
-## sk route:create
+## sk route:generate
 
 ### Feature
 
-Create a new route for the backend repository and a new service for the frontend repository based on the user's answers
+Generate a new route for the backend repository and a new service for the frontend repository based on the user's answers
 
 ### Usage
 
 ```bash
-sk route:create <route-path> [options]
-sk rc <route-path> [options]
+sk route:generate <route-path> [options]
+sk rg <route-path> [options]
 ```
 
 ### Arguments
@@ -75,7 +75,7 @@ sk rc <route-path> [options]
 ### Example
 
 ```bash
-sk route:create
+sk route:generate
 ```
 
 ---
