@@ -20,33 +20,6 @@ For more information check the official documentation.
 
 [Official Angular Documentation →](https://angular.io/docs)
 
-## Skulljs style
-
-Skulljs's Angular component comes with a built-in starter style. Feel free to edit or remove it.
-
-{{< alert icon="👉" >}}
-We recommend using angular material on top of this.
-{{< /alert >}}
-
-### Edit the style
-
-```bash
-# variables
-frontend/src/assets/scss/_variables.scss
-
-# layout
-frontend/src/assets/scss/_layout.scss
-```
-
-### Disable the style
-
-Comment the following line.
-
-```scss
-// frontend/src/style.scss
-@import "./assets/scss/layout";
-```
-
 ## IsAuthorized Guard
 
 To simplify access management of Angular routes, Skulljs comes equipped with a built-in guard named `IsAuthorized`.
